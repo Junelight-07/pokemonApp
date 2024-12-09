@@ -4,7 +4,7 @@ import "./Card.css";
 interface CardProps {
   src: string;
   title: string;
-  setCollectionCount: (count: number) => void;
+  setCollectionCount: (count: (prevCount: number) => number) => void;
   visible: boolean;
 }
 
@@ -12,7 +12,7 @@ export function Card({ src, title, setCollectionCount, visible }: CardProps) {
   const [clicked, setClicked] = useState(false);
 
   const handleAddToCollection = () => {
-    setCollectionCount((prevCount) => prevCount + 1);
+    setCollectionCount((prevCount: number) => prevCount + 1);
     setClicked(true);
   };
 
