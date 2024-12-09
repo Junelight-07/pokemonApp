@@ -24,7 +24,7 @@ export default function App() {
     setFilterType(event.target.value);
   };
 
-  const filteredIndexes = pokemons.map((pokemon, index) => ({
+  const filteredIndexes = pokemons.map((pokemon) => ({
     ...pokemon,
     visible: filterType === "All" || pokemon.type === filterType,
   }));
